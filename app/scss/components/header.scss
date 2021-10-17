@@ -1,0 +1,32 @@
+@use '../util' as *;
+
+.header {
+    height: 100vh;
+    background-image: url('../images/Hogwarts.jpg');
+    filter: grayscale(100%);
+    background-size: cover;
+    position: relative;
+
+    &_next {
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-arrow {
+            border: solid var(--light-bg);
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            margin-top: rem(15);
+            padding: 7px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            animation: MoveUpDown 1s linear infinite;
+            position: relative;
+        }
+    }
+}

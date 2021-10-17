@@ -1,0 +1,20 @@
+@use '../util' as *;
+
+.button {
+    background-color: var(--dark-bg);
+    border: none;
+    color: var(--light-bg);
+    padding: rem(10) rem(45);
+    transition: 0.25s;
+    border-radius: 20px;
+    font-size: rem(20);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: var(--light-bg);
+        color: var(--dark-bg);
+        animation: pulse 1s;
+        box-shadow: 0 0 0 2em rgba(#fff, 0);
+    }
+}

@@ -1,0 +1,97 @@
+@use '../util' as *;
+
+.main {
+    height: 90vh;
+    padding: rem(10);
+    color: var(--light-bg);
+    background-image: url('../images/BlackBackground.jpg');
+
+    &_heading {
+        font-size: rem(50);
+    }
+    &-card {
+        margin-top: rem(60);
+        background-color: transparent;
+        width: rem(300);
+        height: rem(350);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    /* This container is needed to position the front and back side */
+    &-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    &-card:hover &-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    &-card-front,
+    &-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+    }
+
+    /* Style the front side (fallback if image is missing) */
+    &-card-front {
+        background-color: var(--light-bg);
+        color: var(--dark-bg);
+
+        &-name {
+            margin: rem(20);
+            display: inline;
+        }
+
+        &-rating {
+            margin: 0;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            & > span:nth-child(1) {
+                font-size: rem(25);
+                font-weight: 100;
+            }
+        }
+    }
+
+    /* Style the back side */
+    &-card-back {
+        padding: rem(10);
+        background-color: var(--light-card);
+        color: var(--dark-top-bg);
+        transform: rotateY(180deg);
+
+        &-des {
+            color: var(--light-text2);
+            font-size: rem(12);
+        }
+
+        &-date {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-tutor {
+            margin: 0;
+            width: rem(200);
+            display: inline-flex;
+            justify-content: space-between;
+        }
+
+        > button {
+            margin-top: rem(10);
+        }
+    }
+}

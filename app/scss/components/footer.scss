@@ -1,0 +1,10 @@
+@use '../util' as *;
+
+.footer {
+    height: 10vh;
+    background-color: var(--dark-bg);
+    color: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
